@@ -14,8 +14,7 @@
 
     <modules>
         <module>idx2d-core</module>
-        <module>idx2d-app</module>
-        <module>idx2d-demos</module>
+        <module>idx2d-demo-app</module>
     </modules>
 
     <properties>
@@ -30,11 +29,6 @@
             <dependency>
                 <groupId>idx2d</groupId>
                 <artifactId>idx2d-core</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>idx2d</groupId>
-                <artifactId>idx2d-app</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

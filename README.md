@@ -14,8 +14,8 @@ tech-themed split view: pick a demo on the left, watch it render on the right.
 - **Pure software rendering** — every frame is computed into an `int[]` ARGB buffer, no GPU or external
   dependency.
 - **Single executable uber jar** — effects and textures are bundled, so it runs with just a JDK.
-- **Modular** — the rendering library, the application shell and the demos are separate Maven modules;
-  demos are discovered at runtime via a `ServiceLoader` SPI.
+- **Modular** — the rendering library (`idx2d-core`) and the demo application (`idx2d-demo-app`) are
+  separate Maven modules; demos are registered through a lightweight `ServiceLoader` registry.
 - **Modern dark UI** — custom-painted sidebar, hover/selected states, slim scrollbar, typographic
   hierarchy and status bar.
 - **Clean lifecycle** — each demo owns a daemon animation thread that starts when selected and stops when
@@ -26,7 +26,7 @@ tech-themed split view: pick a demo on the left, watch it render on the right.
 This project was ported from the original sources (Java source files, Applets, HTML pages with `<applet>`)
 with **OpenCode** and the **DeepSeek V4 Flash** model.
 
-Total cost: **226,340** tokens, **$0.18** spent.
+Total cost: **291,388** tokens, **$0.24** spent.
 
 _Migration prompt:_
 ```text
@@ -61,14 +61,14 @@ From the repository root:
 mvn clean package
 ```
 
-This builds all three modules, runs the tests and produces a self-contained executable jar at
-`idx2d-demos/target/idx2d.jar` (app + library + effects + textures bundled). The individual modules
-also produce their own jars under `<module>/target/`.
+This builds both modules, runs the tests and produces a self-contained executable jar at
+`idx2d-demo-app/target/idx2d.jar` (app + library + effects + textures bundled). The library module also
+produces `idx2d-core/target/idx2d-core-2.0.0.jar`.
 
 ## Run
 
 ```bash
-java -jar idx2d-demos/target/idx2d.jar
+java -jar idx2d-demo-app/target/idx2d.jar
 ```
 
 ## Using the application
@@ -102,7 +102,7 @@ Interactive demos:
 
 ## Project structure
 
-Three Maven modules, with the runnable uber jar assembled by the top module:
+Two Maven modules, with the runnable uber jar assembled by the application module:
 
 ```
 pom.xml                         parent / reactor
@@ -110,19 +110,17 @@ idx2d-core/                     library — rendering primitives, no UI
   src/main/java/idx2d/          pixel buffer, colour maths, grids, distorters, filters, physics
   src/main/java/idx2d/tools/    ImageIO-based bitmap helper
   src/test/java/                JUnit 5 tests
-idx2d-app/                      base application — Swing shell
-  src/main/java/idx2d/app/      DemoView, Params, Demo, DemoProvider, DemoRegistry, MainFrame, Idx2dApp
+idx2d-demo-app/                 Swing demo application (shell + theme + effects)
+  src/main/java/idx2d/app/      DemoView, Params, Demo, DemoRegistry, MainFrame, Idx2dApp
   src/main/java/idx2d/app/ui/   dark theme and Swing components
-idx2d-demos/                    the ten effects (plugged into the app)
-  src/main/java/idx2d/app/demo/ the effects + DemoCatalog (a DemoProvider)
+  src/main/java/idx2d/app/demo/ the ten effects + DemoCatalog
   src/main/resources/textures/  textures bundled into the jar
   src/main/resources/META-INF/services/idx2d.app.DemoProvider
+  src/test/java/                JUnit 5 tests
 docs/screenshot.png
-refactoring-idx2d-modernization.md   migration plan and work log
 ```
 
-Dependency direction: `idx2d-demos` → `idx2d-app` → `idx2d-core`. The app shell never references the
-demos directly; it discovers them through the `DemoProvider` service interface.
+Dependency direction: `idx2d-demo-app` → `idx2d-core`.
 
 ## Architecture notes
 
@@ -132,16 +130,15 @@ demos directly; it discovers them through the `DemoProvider` service interface.
   painting happens on the Swing EDT via `paintComponent`.
 - **Textures are classpath resources** loaded with `ImageIO` (`TextureLoader`), replacing applet
   `getDocumentBase()`.
-- **Plug-in demos** — `DemoRegistry` loads every `DemoProvider` via `ServiceLoader`; adding a demo means
-  registering it in `DemoCatalog` (or adding another provider), with no change to the app module.
+- **Demo registry** — `DemoRegistry` loads every `DemoProvider` via `ServiceLoader`; adding a demo means
+  registering it in `DemoCatalog` (or adding another provider).
 - **No runtime dependencies.** JUnit 5 is test-scope only.
 
 ## History
 
 The original sources were Java Applets (`.html` launchers, `idx2d.jar`, AWT event overrides,
 `Thread.stop()`). They were reorganised into a standard Maven layout, migrated to Java 17 and ported to
-Swing. The full plan, decisions and work log live in
-[`refactoring-idx2d-modernization.md`](refactoring-idx2d-modernization.md).
+Swing.
 
 ## Credits
 
