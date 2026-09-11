@@ -1,0 +1,132 @@
+[Project ID]
+Signature=UE Proj: v.1
+
+[Open Files]
+Open File0=E:\idx2d\GaussianBlur.java
+Open File Pos0=474
+Open File Line0=20
+Open File Window Pos0=0,1,-1,-1,-4,-23,22,22,631,358
+Open File1=E:\idx2d\idx2d\filter\Convolution.java
+Open File Pos1=761
+Open File Line1=164
+Active File Index=3
+Open File Window Pos1=0,1,-1,-1,-4,-23,44,44,657,384
+Open File2=E:\idx2d\FeedbackApplet.java
+Active File Display Mode=3
+Open File Pos2=0
+Open File Line2=0
+Open File Window Pos2=0,1,-1,-1,-4,-23,88,88,701,428
+Open File3=E:\idx2d\Distorter2Applet.java
+Open File Pos3=1829
+Open File Line3=1467
+Open File Window Pos3=2,3,-1,-1,-4,-23,132,132,701,564
+Open File4=E:\idx2d\idx2d\ThreadApplet.java
+Open File Pos4=0
+Open File Line4=327
+Open File Window Pos4=0,1,-1,-1,-4,-23,0,0,613,340
+Open File5=
+Open File Pos5=5135
+Open File Line5=4653
+Open File Window Pos5=0,1,0,0,-4,-23,132,132,806,475
+Open File6=E:\idx2d\idx2d\grid\GridOscillator.java
+Open File Pos6=1595
+Open File Line6=1254
+Open File Window Pos6=0,1,0,0,-4,-23,22,22,618,455
+Open File7=E:\idx2d\idx2d\grid\GridNode.java
+Open File Pos7=313
+Open File Line7=0
+Open File Window Pos7=0,1,0,0,-4,-23,110,110,750,460
+Open File8=E:\idx2d\idx2d\grid\Grid8x8.java
+Open File Pos8=1151
+Open File Line8=0
+Open File Window Pos8=0,1,0,0,-4,-23,132,132,772,482
+Open File9=E:\idx2d\idx2d\grid\GouraudGridDistorter.java
+Open File Pos9=0
+Open File Line9=2295
+Open File Window Pos9=0,1,0,0,-4,-23,110,110,706,543
+Open File10=E:\idx2d\LiquidApplet.java
+Open File Pos10=1465
+Open File Line10=392
+Open File Window Pos10=0,1,0,0,-4,-23,0,0,640,350
+Open File11=E:\idx2d\idx2d\grid\FastGridDistorter.java
+Open File Pos11=0
+Open File Line11=1951
+Open File Window Pos11=0,1,0,0,-4,-23,22,22,662,372
+Open File12=E:\idx2d\idx2d\grid\IsoGrid8x8.java
+Open File Pos12=764
+Open File Line12=508
+Open File Window Pos12=0,1,0,0,-4,-23,44,44,684,394
+Open File13=E:\idx2d\idx2d\grid\PhongGridDistorter.java
+Open File Pos13=3340
+Open File Line13=3041
+Open File Window Pos13=0,1,0,0,-4,-23,154,154,794,504
+Open File14=E:\idx2d\idx2d\struct\SphereMap.java
+Open File Pos14=161
+Open File Line14=153
+Open File Window Pos14=0,1,0,0,-4,-23,132,132,728,565
+Open File15=E:\idx2d\idx2d\ThreadApplet.java
+Open File Pos15=451
+Open File Line15=0
+Open File Window Pos15=0,1,0,0,-4,-23,0,0,648,339
+Open File16=E:\idx2d\DistorterApplet.java
+Open File Pos16=1723
+Open File Line16=1386
+Open File Window Pos16=2,3,0,0,-4,-23,22,22,670,360
+Open File17=E:\idx2d3d\Lake3d.java
+Open File Pos17=0
+Open File Line17=0
+Open File Window Pos17=0,1,0,0,-4,-23,66,66,714,405
+Open File18=E:\idx2d\idx2d\BitmapCodec.java
+Open File Pos18=1141
+Open File Line18=967
+Open File Window Pos18=0,1,0,0,-4,-23,0,0,604,433
+Open File19=
+Open File Pos19=1141
+Open File Line19=967
+Open File Window Pos19=0,1,0,0,-4,-23,0,0,604,433
+Open File20=
+Open File Pos20=0
+Open File Line20=0
+Open File Window Pos20=2,3,0,0,-4,-23,22,22,626,455
+Open File21=
+
+
+[File View]
+Current Select=E:\idx2d\idx2d\
+
+[Project Information]
+Project Directory=E:\idx2d\
+Use Relative Directory=1
+Relative to Project File=1
+Project Wordfile=
+[Files - idx2d Core]
+0=idx2d\BitmapCodec.java
+1=idx2d\Color24.java
+2=idx2d\FastImageProducer.java
+3=idx2d\Texture.java
+4=idx2d\TextureBlender.java
+5=idx2d\ThreadApplet.java
+[Files - Applets]
+0=CircleTest.java
+1=DistorterApplet.java
+2=DropApplet.java
+3=DropBlenderApplet.java
+4=FeedbackApplet.java
+5=GaussianBlur.java
+6=ImageCodec.java
+7=Kopie von DistorterApplet.java
+8=LakeApplet.java
+9=LiquidApplet.java
+10=RotationTest.java
+11=RotoZoomerApplet.java
+12=SinDistorterApplet.java
+13=TunnelApplet.java
+[Files - idx2d Other]
+0=idx2d\struct\BumpMap.java
+1=idx2d\filter\Convolution.java
+2=idx2d\struct\SphereMap.java
+[Group]
+0=Applets
+1=idx2d Core
+2=idx2d Other
+4=

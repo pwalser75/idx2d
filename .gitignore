@@ -1,0 +1,20 @@
+target/
+*.class
+
+# Maven shade
+dependency-reduced-pom.xml
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+hs_err_pid*
